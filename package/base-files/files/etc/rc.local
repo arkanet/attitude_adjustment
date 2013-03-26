@@ -6,7 +6,7 @@
 #iptables -A FORWARD -d 192.168.1.0/24 -j DROP
 
 #Copy local routes only from table main 254 to table 110
-#ip route show table 254 | grep -Ev ^default | grep -Ev ^blackhole | while read ROUTE ; do
+#ip route show table 254 | grep -Ev ^default | grep -Ev ^blackhole | grep -v ath0 | while read ROUTE ; do
 #ip route add table 110 $ROUTE
 #done
 
